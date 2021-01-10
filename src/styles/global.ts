@@ -17,6 +17,10 @@ export default createGlobalStyle`
 
   body, input, button{
     font: 16px Roboto, sans-serif;
+
+    @media (max-width: 768px){
+      font: 14px Roboto, sans-serif;
+    }
   }
 
   #root{

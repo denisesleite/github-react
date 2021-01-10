@@ -7,11 +7,16 @@ interface FormProps{
 }
 
 export const Title = styled.h1`
-  font-size: 48px;
+  font-size: 38px;
   color: #3a3a3a;
   margin-top: 80px;
   max-width: 450px;
   line-height: 56px;
+
+  @media (max-width: 768px){
+    font-size: 25px;
+    line-height: 33px;
+  }
 `;
 
 export const Form = styled.form<FormProps>`
@@ -19,15 +24,27 @@ export const Form = styled.form<FormProps>`
   max-width: 700px;
   display: flex;
 
+  @media (max-width: 768px){
+    flex-direction: column;
+    align-items: center
+  }
+
   input{
     flex: 1;
-    height: 70px;
+    height: 55px;
     padding: 0 24px;
     border: 0;
     border-radius: 5px 0 0 5px;
     color: #3a3a3a;
     border: 2px solid #fff;
     border-right: none;
+
+    @media (max-width: 768px){
+      flex: inherit;
+      border-radius: 5px;
+      width: 100%;
+      border-right: 2px solid #c53030;
+    }
 
     ${(props) => props.hasError && css`
       border-color: #c53030;
@@ -40,13 +57,19 @@ export const Form = styled.form<FormProps>`
 
   button{
     width: 210px;
-    height: 70px;
+    height: 55px;
     background: #04d361;
     border-radius: 0 5px 5px 0;
     border: 0;
     color: #fff;
     font-weight: bold;
     transition: background 0.2;
+
+    @media (max-width: 768px){
+      margin-top: 15px;
+      border-radius: 5px;
+      width: 100%;
+    }
 
     &:hover{
       background: ${shade(0.2, '#04d361')};
@@ -80,6 +103,11 @@ export const Repositories = styled.div`
       width: 64px;
       height: 64px;
       border-radius: 50%;
+
+      @media (max-width: 768px){
+        width: 50px;
+        height: 50px;
+      }
     }
 
     div{
@@ -87,14 +115,22 @@ export const Repositories = styled.div`
       flex: 1;
 
       strong{
-        font-size: 20px;
+        font-size: 16px;
         color: #3D3D4D;
+
+        @media (max-width: 768px){
+          font-size: 14px;
+        }
       }
 
       p{
-        font-size: 18px;
+        font-size: 16px;
         color: #A8A8B3;
         margin-top: 4px;
+
+        @media (max-width: 768px){
+          font-size: 14px;
+        }
       }
     }
 
